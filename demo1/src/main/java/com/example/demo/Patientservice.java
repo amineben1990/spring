@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-public class Patientservice {
+
 	@Service
 	public class PatientService {
 	    @Autowired

@@ -7,8 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MedecinService {
-	    @Autowired	    private MedecinRepository medecinRepository;
-	    private MedecinService medecinservice;
+
 
 	public MedecinService() {
 	}

@@ -11,6 +11,7 @@ import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,6 +24,7 @@ import org.springframework.aot.generate.Generated;
 @AllArgsConstructor
 @NoArgsConstructor
 
+
 public class Patient {
 	@Id
 	@Generated(strategy = GenerationType.IDENTITY)
@@ -31,7 +33,7 @@ public class Patient {
 	private String pren;
 
 
-
+	@OneToMany(mappedBy = "medecin")
 	private List <Rdv>rdv = new ArrayList<>();
 
 	public Patient () {

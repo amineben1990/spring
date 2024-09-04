@@ -13,11 +13,10 @@ public class PatientController {
     private PatientRepository patientRepository;
 
     @Autowired
-    private RdvService rdvService;
+    private RdvRepository  rdvRepository;
 
     @Autowired
     private MedecinRepository medecinRepository;
-
 
     @PostMapping
     public ResponseEntity<Patient> createPatient(@RequestBody Patient patient) {

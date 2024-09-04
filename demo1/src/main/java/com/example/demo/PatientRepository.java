@@ -5,10 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 	public interface PatientRepository extends JpaRepository<Patient, Long> {
-//		List<Patient>findbyID(Long ID);
-//		List<Patient>findAll();
-//		List<Patient>deleteById(Long ID);
-//
-//		Patient save(Patient patient);
+		List<Patient>findID(Long ID);
+
 	}
 

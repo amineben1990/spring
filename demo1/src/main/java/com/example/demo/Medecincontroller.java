@@ -5,8 +5,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
-public class MedicineController {
+@RequestMapping("/Medecin")
+public class MedecinController {
 
     @Autowired
     private MedecinService medecinService;
@@ -14,12 +14,12 @@ public class MedicineController {
     private RdvService rdvService;
 
     @PostMapping
-    public ResponseEntity<Medecin> createMedicine(@RequestBody Medecin medecin) {
+    public ResponseEntity<Medecin> createMedecin(@RequestBody Medecin medecin) {
         Medecin savedMedecin = medecinService.saveMedecin(medecin);
         return ResponseEntity.ok(savedMedecin);
     }
-    @GetMapping
-    public ResponseEntity<Medecin> getMedicine(@PathVariable Long id) {
+    @GetMapping ("/{id}")
+    public ResponseEntity<Medecin> getMedecin(@PathVariable Long id) {
         Medecin medecin = medecinService.getMedecinById(id);
         if (medecin != null) {
             return ResponseEntity.ok(medecin);
@@ -29,7 +29,7 @@ public class MedicineController {
     }
 
     @DeleteMapping
-    public ResponseEntity<Void> deleteMedicine(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteMedecin(@PathVariable Long id) {
         medecinService.deleteMedecin(id);
         return ResponseEntity.noContent().build();
     }
